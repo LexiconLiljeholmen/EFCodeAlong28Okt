@@ -9,6 +9,14 @@ namespace LexiconUniversity.Models {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime EnrollmentDate { get; set; }
+        public string FullName {
+            get {
+                var fullName = FirstName + " " + LastName;
+                fullName.Trim();
+                return fullName;
+            }
+        }
 
+        public virtual ICollection<Enrollment> Enrollments { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Data.Entity.Migrations;
 using LexiconUniversity.Models;
 
 namespace LexiconUniversity.DataAccessLayer {
-    public class UniversityInitializer : CreateDatabaseIfNotExists<UniversityContext> {
+    public class UniversityInitializer : DropCreateDatabaseAlways<UniversityContext> {
 
         protected override void Seed(UniversityContext context) {
             var students = new List<Student> { 
